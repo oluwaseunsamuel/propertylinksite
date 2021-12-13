@@ -1,0 +1,164 @@
+import { CheckCircleOutlined } from "@material-ui/icons";
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: #f7fff5;
+`;
+const Wrapper = styled.div`
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //justify-content: center;
+`;
+const Intro = styled.span`
+  margin-bottom: 30px;
+  font-size: 18px;
+`;
+const IntroTitle = styled.h1`
+  font-size: 48px;
+  font-weight: 400;
+`;
+const Desc = styled.span`
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 300;
+`;
+const PriceCalculate = styled.div`
+  width: 75%;
+  background-color: yellowgreen;
+`;
+const PriceCalculateWrap = styled.div`
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+`;
+const PriceCalculateRight = styled.div`
+  flex: 1;
+`;
+const TitlePricing = styled.h2`
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 1px 0.8px black;
+`;
+const TextLabel = styled.h2`
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+`;
+const Input = styled.input`
+  width: 90%;
+  padding: 16px 50px;
+  font-size: 18px;
+`;
+const RadioButton = styled.div`
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+`;
+const RadioItem = styled.span`
+  margin-right: 32px;
+  font-size: 18px;
+`;
+
+const PriceCalculateLeft = styled.div`
+  flex: 1;
+`;
+const TitleSection = styled.h2`
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 1px 0.8px black;
+`;
+const PriceDesc = styled.span`
+  font-size: 18px;
+`;
+const GetList = styled.span`
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 16px;
+`;
+const Button = styled.button`
+  padding: 10px 20px;
+  background-color: darkgreen;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+`;
+
+const Calculator = () => {
+  return (
+    <Container>
+      <Wrapper>
+        <Intro>Payment</Intro>
+        <IntroTitle>No Up-front Payment Required</IntroTitle>
+        <IntroTitle>Or Hidden Charges</IntroTitle>
+        <Desc>Use our calculator below to see how the payment plan works</Desc>
+        <PriceCalculate>
+          <PriceCalculateWrap>
+            <PriceCalculateRight>
+              <TitlePricing>Pricing Calculator</TitlePricing>
+              <TextLabel>Select an Estate Location</TextLabel>
+              <Input type="select" placeholder="Pillar Gardens Estate" />
+              <TextLabel>Number of Slot</TextLabel>
+              <Input type="select" placeholder="2" />
+              <TextLabel>Select Payment Option</TextLabel>
+              <RadioButton>
+                <RadioItem>
+                  <Input type="radio" />
+                  Daily
+                </RadioItem>
+                <RadioItem>
+                  <Input type="radio" />
+                  Weekly
+                </RadioItem>
+                <RadioItem>
+                  <Input type="radio" />
+                  Monthly
+                </RadioItem>
+                <RadioItem>
+                  <Input type="radio" />
+                  Once
+                </RadioItem>
+              </RadioButton>
+            </PriceCalculateRight>
+            <PriceCalculateLeft>
+              <TitleSection>
+                Select A Land, Pick A Payment Plan And Get Your Offer Letter
+              </TitleSection>
+              <PriceDesc>
+                You get the land in 12 months of consistent payment or half
+                payment of total amount (while payment is ongoing) and
+                including:
+              </PriceDesc>
+              <GetList>
+                <CheckCircleOutlined style={{ marginRight: "10px" }} />
+                All documents including Certificate of ownership (COFO)
+              </GetList>
+              <GetList>
+                <CheckCircleOutlined style={{ marginRight: "10px" }} /> A slot
+                is a equal to a half plot of land
+              </GetList>
+              <GetList>
+                <CheckCircleOutlined style={{ marginRight: "10px" }} />
+                You can decide to switch payment option when you want
+              </GetList>
+              <GetList>
+                <CheckCircleOutlined style={{ marginRight: "10px" }} />
+                Location Visition is by booking
+              </GetList>
+              <Button>Own A Land Now</Button>
+            </PriceCalculateLeft>
+          </PriceCalculateWrap>
+        </PriceCalculate>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default Calculator;
