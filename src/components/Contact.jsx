@@ -61,6 +61,7 @@ const AddressContainer = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  padding-left: 30px;
   //align-items: center;
 `;
 const AddressIntroText = styled.p`
