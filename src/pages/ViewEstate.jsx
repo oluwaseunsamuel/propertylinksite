@@ -1,25 +1,28 @@
-import AboutSection from "../components/AboutSection";
+import React from "react";
+import styled from "styled-components";
 import Announce from "../components/Announce";
-import Calculator from "../components/Calculator";
 import Contact from "../components/Contact";
 import CopyRightFooter from "../components/CopyRightFooter";
-import FlexPaySection from "../components/FlexPaySection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
-import ServiceSection from "../components/ServiceSection";
-import Slider from "../components/Slider";
 
-const Home = () => {
+const Container = styled.div`
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fff5;
+`;
+
+const ViewEstate = () => {
   return (
     <>
       <Announce />
       <Navbar />
-      <Slider />
-      <FlexPaySection />
-      <AboutSection />
-      <ServiceSection />
-      <Calculator />
+      <Container>
+        <h1>This is View Estate Page</h1>
+      </Container>
       <Contact />
       <NewsLetter />
       <Footer />
@@ -28,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ViewEstate;

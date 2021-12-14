@@ -6,7 +6,7 @@ const Container = styled.div`
   height: 100%;
 `;
 const Wrapper = styled.div`
-  padding: 50px;
+  padding: 60px;
   display: flex;
   align-items: center;
   justify-content: center;

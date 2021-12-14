@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Badge } from "@material-ui/core";
-import { ShoppingBasketOutlined } from "@material-ui/icons";
 import brand from "../components/Assets/companylogo.png";
 
 const NavContainer = styled.nav`
@@ -46,38 +44,6 @@ const NavMenu = styled.ul`
     display: none;
   }
 `;
-const NavItem = styled.li`
-  height: 80px;
-  position: relative;
-  font-size: 16px;
-  color: gray;
-
-  :after {
-    content: "";
-    height: 3px;
-    width: 0;
-    background: yellowgreen;
-    position: absolute;
-    left: 0;
-    transition: 0.5s;
-  }
-  &:hover:after {
-    width: 100%;
-  }
-`;
-const NavLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1.2rem;
-  height: 100%;
-  cursor: pointer;
-
-  &:hover {
-    //transition: all 0.3s ease-in-out;
-    //color: #e67817;
-  }
-`;
 const NavBtn = styled.nav`
   display: flex;
   align-items: center;
@@ -106,7 +72,7 @@ const NavBtnLink = styled(Link)`
   }
 `;
 
-const Navbar = () => {
+const RegisterLoginNav = () => {
   return (
     <NavContainer>
       <NavWrapper>
@@ -114,35 +80,16 @@ const Navbar = () => {
           <img src={brand} alt="" style={{ height: "50px" }} />
         </NavLogo>
         <NavMenu>
-          <NavItem>
-            <NavLink to="/about">ABOUT</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/services">SERVICES</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/calculatePage">PRICE CALCULATOR</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/viewestate">VIEW ESTATE</NavLink>
-          </NavItem>
           <NavBtn>
             <NavBtnLink to="/register">REGISTER</NavBtnLink>
           </NavBtn>
           <NavBtn>
             <NavBtnLink to="/login">SIGN IN</NavBtnLink>
           </NavBtn>
-          <NavItem>
-            <NavLink to="/cart">
-              <Badge badgeContent={0} color="secondary" showZero>
-                <ShoppingBasketOutlined style={{ fontSize: "30px" }} />
-              </Badge>
-            </NavLink>
-          </NavItem>
         </NavMenu>
       </NavWrapper>
     </NavContainer>
   );
 };
 
-export default Navbar;
+export default RegisterLoginNav;
