@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Announce from "../components/Announce";
+//import Announce from "../components/Announce";
 import RegisterLoginNav from "../components/RegisterLoginNav";
 import CopyRightFooter from "../components/CopyRightFooter";
 
 const Container = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: #036403;
   display: flex;
   align-items: center;
@@ -16,9 +16,15 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  @media screen and (max-width: 768px){
+    width: 75%;
+  }
+  @media screen and (max-width: 425px){
+    width: 75%;
+  }
 `;
 const Title = styled.h1`
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 300;
 `;
 const Form = styled.form`
@@ -26,7 +32,7 @@ const Form = styled.form`
   flex-wrap: wrap;
 `;
 const Input = styled.input`
-  font-size: 18px;
+  font-size: 14px;
   flex: 1;
   min-width: 40%;
   margin: 20px 10px 0px 0px;
@@ -43,14 +49,13 @@ const Button = styled.button`
   cursor: pointer;
   background-color: darkgreen;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
 `;
 
 const Register = () => {
   return (
     <>
-      <Announce />
-      <RegisterLoginNav />
+    <RegisterLoginNav />
       <Container>
         <Wrapper>
           <Title>CREATE AN ACCOUNT</Title>

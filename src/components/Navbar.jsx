@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 import { Badge } from "@material-ui/core";
-import { ShoppingBasketOutlined } from "@material-ui/icons";
+import { ShoppingBasketOutlined, Menu } from "@material-ui/icons";
 import brand from "../components/Assets/companylogo.png";
 
 const NavContainer = styled.nav`
@@ -21,7 +21,7 @@ const NavWrapper = styled.div`
   padding-right: 60px;
   padding-left: 60px;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -34,6 +34,23 @@ const NavLogo = styled(Link)`
   text-decoration: none;
   cursor: pointer;
 `;
+const MobileIcon = styled.div`
+  display: none;
+  color: #fff;
+  height: 85px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    //font-size: 1.8rem;
+    cursor: pointer;
+    color: black;
+    margin-top: -25px;
+  }
+`;
 const NavMenu = styled.ul`
   display: flex;
   align-items: center;
@@ -42,7 +59,7 @@ const NavMenu = styled.ul`
 
   //margin-right: -22px;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -50,7 +67,7 @@ const NavItem = styled.li`
   height: 80px;
   position: relative;
   font-size: 16px;
-  color: gray;
+  font-weight: 400;
 
   :after {
     content: "";
@@ -74,8 +91,12 @@ const NavLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    //transition: all 0.3s ease-in-out;
-    //color: #e67817;
+    transition: all 0.3s ease-in-out;
+    color: #e67817;
+  }
+
+  &.active {
+    color: #e67817;
   }
 `;
 const NavBtn = styled.nav`
@@ -83,7 +104,7 @@ const NavBtn = styled.nav`
   align-items: center;
   margin-right: 24px;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -105,26 +126,47 @@ const NavBtnLink = styled(Link)`
     color: yellowgreen;
   }
 `;
+const CartIcon = styled.div`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-const Navbar = () => {
+  @media screen and (max-width: 768px) {
+    margin-right: 40px;
+  }
+`;
+
+const Navbar = ({ toggle }) => {
   return (
     <NavContainer>
       <NavWrapper>
         <NavLogo to="/">
           <img src={brand} alt="" style={{ height: "50px" }} />
         </NavLogo>
+        <MobileIcon onClick={toggle}>
+          <Menu style={{ fontSize: "32px" }} />
+        </MobileIcon>
         <NavMenu>
           <NavItem>
-            <NavLink to="/about">ABOUT</NavLink>
+            <NavLink to="/about" activeStyle>
+              ABOUT
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/services">SERVICES</NavLink>
+            <NavLink to="/services" activeStyle>
+              SERVICES
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/calculatePage">PRICE CALCULATOR</NavLink>
+            <NavLink to="/calculatePage" activeStyle>
+              PRICE CALCULATOR
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/viewestate">VIEW ESTATE</NavLink>
+            <NavLink to="/viewestate" activeStyle>
+              VIEW ESTATE
+            </NavLink>
           </NavItem>
           <NavBtn>
             <NavBtnLink to="/register">REGISTER</NavBtnLink>
@@ -132,14 +174,14 @@ const Navbar = () => {
           <NavBtn>
             <NavBtnLink to="/login">SIGN IN</NavBtnLink>
           </NavBtn>
-          <NavItem>
-            <NavLink to="/cart">
-              <Badge badgeContent={0} color="secondary" showZero>
-                <ShoppingBasketOutlined style={{ fontSize: "30px" }} />
-              </Badge>
-            </NavLink>
-          </NavItem>
         </NavMenu>
+        <CartIcon>
+          <NavLink to="/cart">
+            <Badge badgeContent={0} color="secondary" showZero>
+              <ShoppingBasketOutlined style={{ fontSize: "30px" }} />
+            </Badge>
+          </NavLink>
+        </CartIcon>
       </NavWrapper>
     </NavContainer>
   );

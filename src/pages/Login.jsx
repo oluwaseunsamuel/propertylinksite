@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Announce from "../components/Announce";
 import CopyRightFooter from "../components/CopyRightFooter";
 import RegisterLoginNav from "../components/RegisterLoginNav";
 
 const Container = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: #036403;
   display: flex;
   align-items: center;
@@ -16,9 +15,17 @@ const Wrapper = styled.div`
   width: 30%;
   padding: 20px;
   background-color: white;
+
+  @media screen and (max-width: 768px){
+    width: 75%;
+  }
+  @media screen and (max-width: 425px){
+    width: 75%;
+  }
+
 `;
 const Title = styled.h1`
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 300;
 `;
 const Form = styled.form`
@@ -26,7 +33,7 @@ const Form = styled.form`
   flex-direction: column;
 `;
 const Input = styled.input`
-  font-size: 18px;
+  font-size: 14px;
   flex: 1;
   min-width: 40%;
   margin: 10px 0px;
@@ -40,7 +47,7 @@ const Button = styled.button`
   cursor: pointer;
   background-color: darkgreen;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 10px;
 `;
 
@@ -54,7 +61,6 @@ const Link = styled.a`
 const Login = () => {
   return (
     <>
-      <Announce />
       <RegisterLoginNav />
       <Container>
         <Wrapper>

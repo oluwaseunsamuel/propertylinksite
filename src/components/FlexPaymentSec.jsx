@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Servicepict from "../components/Assets/servicepict.jpg"
+import Slider2 from "../components/Assets/slider2.jpg"
 import styled from "styled-components";
-import { Bookmark } from "@material-ui/icons";
+import { Filter1Outlined, Filter2, Filter3 } from "@material-ui/icons";
 
 const InfoSec = styled.div`
   position: relative;
@@ -72,7 +72,7 @@ margin-bottom: 10px;
 ` 
 const Desc = styled.p`
   max-width: 440px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   font-size: 14px;
   line-height: 18px;
 `;
@@ -106,36 +106,32 @@ const FlexPaySec = ({ lightBg, imgStart, primary }) => {
 
             <InfoColumn>
               <TextWrapper>
-                <TopLine>We Offer Services in this following</TopLine>
+                <TopLine>Daily, Weekly, Monthly or One-Off</TopLine>
                 <Title>
-                  Our Services Range from This, More and Reason why us
+                  Own A Land In 3 Easy Steps - How Flexi Real Estate Works.
                 </Title>
-                <DescTitle><Bookmark style={{marginRight: "10px"}}/> Construction And Design</DescTitle>
+                <DescTitle><Filter1Outlined style={{marginRight: "10px"}}/> Select an Estate Location</DescTitle>
                 <Desc>
-                  Real estate shouldn’t just be about property sales and consultancy; it should portray Concepts, Aesthetics and Culture of a built environment 
+                  At the top of a button, you can select the estate location that best suits your taste and your pocket from our exquisite 25 estate locations
                 </Desc>
-                <DescTitle><Bookmark style={{marginRight: "10px"}}/>Property Management</DescTitle>
+                <DescTitle><Filter2 style={{marginRight: "10px"}}/>Pick a payment plan</DescTitle>
                 <Desc>
-                  The need for landlords, landowners and property investors to generate maximum returns from their assets is increasingly important and property management advice
+                  How would you like to pay? Select a payment method that best suits you and dictates the flow.
                 </Desc>
-                <DescTitle><Bookmark style={{marginRight: "10px"}}/>Property Sale, Rental And Development</DescTitle>
+                <DescTitle><Filter3 style={{marginRight: "10px"}}/>Get your offer letter</DescTitle>
                 <Desc>
-                 Gilgal Homes is a subsidiary of Propertylink Real Estate Investment Limited offering full-service real estate brokerage.
-                </Desc>
-                <DescTitle><Bookmark style={{marginRight: "10px"}}/>Financial Services Consulting</DescTitle>
-                <Desc>
-                 At Propertylink Real Estate Investment Limited, our service programs have been carefully formulated to help you understand even the most complicated financial products in the simplest possible terms
+                 We give you an instant offer letter telling you what you've signed up for and even your proposed date of allocation.
                 </Desc>
                 <Link to="/viewestate">
                   <Button big fontBig primary={primary}>
-                    READ DETAILS
+                    VIEW ESTATE
                   </Button>
                 </Link>
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
               <ImgWrapper>
-                <Img src={Servicepict} alt="ServiceImage" />
+                <Img src={Slider2} alt="SliderImage" />
               </ImgWrapper>
             </InfoColumn>
           </InfoRow>

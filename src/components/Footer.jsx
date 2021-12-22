@@ -12,12 +12,21 @@ import {
 
 const Container = styled.div`
   display: flex;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    max-width: 75%
+  }
 `;
 const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 60px;
+
+  @media screen and (max-width: 768px){
+    padding: 20px;
+  }
 `;
 const LogoContainer = styled.div``;
 const Desc = styled.p`
@@ -42,6 +51,10 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 50px;
+
+  @media screen and (max-width: 768px){
+    padding: 20px;
+  }
 `;
 
 const Title = styled.h3`
@@ -64,6 +77,10 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 50px;
+
+  @media screen and (max-width: 768px){
+    padding: 20px;
+  }
 `;
 
 const ContactItem = styled.div`

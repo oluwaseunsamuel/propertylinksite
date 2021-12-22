@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #f7fff5;
-  height: 40vh;
 `;
 const Wrapper = styled.div`
   padding: 50px;
@@ -16,10 +15,17 @@ const Title = styled.h1`
   font-size: 50px;
   margin-bottom: 20px;
 `;
-const Desc = styled.div`
+const Desc = styled.p`
   font-size: 20px;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 14px;
+  }
 `;
 const InputContainer = styled.div`
   width: 50%;
@@ -28,6 +34,14 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    width: 70%;
+  }
+  @media screen and (max-width: 425px) {
+    width: 70%;
+  }
 `;
 const Input = styled.input`
   border: none;

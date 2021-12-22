@@ -10,6 +10,10 @@ const Container = styled.div`
   background-color: #daecda;
   position: relative;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Arrow = styled.div`
@@ -29,7 +33,6 @@ const Arrow = styled.div`
   cursor: pointer;
   z-index: 2;
 `;
-
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
@@ -42,17 +45,25 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 `;
 const ImgContainer = styled.div`
   height: 100%;
   flex: 1;
 `;
 const Image = styled.img`
-  height: 100%;
+  height: 90%;
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 80px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Title = styled.h1`

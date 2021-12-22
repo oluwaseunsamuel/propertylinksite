@@ -10,8 +10,8 @@ const Container = styled.div`
   font-size: 16px;
   font-weight: 500;
 
-  @media screen and (max-width: 650px) {
-    display: none;
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
   }
 `;
 

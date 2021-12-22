@@ -1,5 +1,5 @@
 import Cart1 from "../components/Assets/propertycart.jpeg";
-import { AddCircle, RemoveCircle } from "@material-ui/icons";
+import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announce from "../components/Announce";
 import Contact from "../components/Contact";
@@ -13,6 +13,11 @@ const CartContainer = styled.div`
 `;
 const Wrapper = styled.div`
   padding: 60px;
+
+  @media screen and (max-width: 768px){
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -22,6 +27,7 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 20px 0px;
 `;
 const TopButton = styled.button`
   padding: 10px;
@@ -32,7 +38,11 @@ const TopButton = styled.button`
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
 `;
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+`;
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -41,14 +51,22 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+  }
 `;
-const Info = styled.span`
+const Info = styled.div`
   flex: 3;
   margin-top: 50px;
 `;
 const Property = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 425px){
+    flex-direction: column;
+  }
 `;
 const PropertyDetail = styled.div`
   flex: 2;
@@ -59,11 +77,12 @@ const Image = styled.img`
   border-radius: 15px;
 `;
 const Detail = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin: 5px 15px;
+  justify-content: space-around;
 `;
 const PropertyName = styled.span``;
 const PropertyLocation = styled.span``;
@@ -73,6 +92,7 @@ const PriceDetail = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 5px 15px;
   align-items: center;
   justify-content: center;
 `;
@@ -84,9 +104,12 @@ const PropertyAmountContainer = styled.div`
 const PropertyAmount = styled.div`
   font-size: 24px;
   margin: 5px;
+  @media screen and (max-width: 425px){
+    margin: 10px 15px;
+  }
 `;
 const PropertyPrice = styled.div`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 200;
 `;
 const Hr = styled.hr`
@@ -101,7 +124,7 @@ const Summary = styled.span`
   border: 0.5px solid lightgrey;
   border-radius: 10px;
   padding: 20px;
-  height: 70vh;
+  height: 70%;
   box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
 `;
 const SummaryPaymentOption = styled.span`
@@ -173,11 +196,11 @@ const Cart = () => {
                 </PropertyDetail>
                 <PriceDetail>
                   <PropertyAmountContainer>
-                    <AddCircle />
+                    <Add styled={{fontSize: "12px"}}/>
                     <PropertyAmount>2</PropertyAmount>
-                    <RemoveCircle />
+                    <Remove styled={{fontSize: "12px"}}/>
                   </PropertyAmountContainer>
-                  <PropertyPrice>N 300</PropertyPrice>
+                  <PropertyPrice>N300 000</PropertyPrice>
                 </PriceDetail>
               </Property>
               <Hr />
@@ -201,11 +224,11 @@ const Cart = () => {
                 </PropertyDetail>
                 <PriceDetail>
                   <PropertyAmountContainer>
-                    <AddCircle />
+                    <Add styled={{fontSize: "12px"}}/>
                     <PropertyAmount>2</PropertyAmount>
-                    <RemoveCircle />
+                    <Remove styled={{fontSize: "12px"}}/>
                   </PropertyAmountContainer>
-                  <PropertyPrice>N 300</PropertyPrice>
+                  <PropertyPrice>N400 000</PropertyPrice>
                 </PriceDetail>
               </Property>
             </Info>
